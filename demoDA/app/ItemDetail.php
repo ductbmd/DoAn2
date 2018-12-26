@@ -16,8 +16,8 @@ class ItemDetail extends Model
     protected $fillable = [
         'item_id','description'
     ];
-    public function item()
+    public function itemgoc()
     {
-    	return $this->hasMany(Item::class,'id','item_id');
+    	return $this->hasOne(Item::class,'id','item_id');
     }
 }

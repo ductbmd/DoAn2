@@ -19,5 +19,9 @@ class Item extends Model
     protected $fillable = [
         'name','unit','quantity','quality','price','type'
     ];
+    public function file()
+    {
+        return $this->hasOne(ItemFile::class,'item_id','id');
+    }
 
 }

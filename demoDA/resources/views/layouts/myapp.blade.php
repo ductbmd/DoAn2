@@ -5,20 +5,25 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Font Awesome -->
+		<!-- <link rel="stylesheet" href="{{asset('frontEnd/css/bootstrap.css')}}"> -->
 		<link rel="stylesheet" href="{{asset('frontEnd/fonts/Bebas/stylesheet.css')}}">
 		<link rel="stylesheet" href="{{asset('frontEnd/fonts/HelveticaNeue/font.css')}}">
 		<link rel="stylesheet" href="{{asset('frontEnd/css/font-awesome.min.css')}}">
+		@yield('head')	
+
 		<!-- Important Owl stylesheet -->
 		<link rel="stylesheet" href="{{asset('frontEnd/css/owl.carousel.css')}}">
 		<link rel="stylesheet" href="{{asset('frontEnd/css/owl.theme.css')}}">
 		<!-- Color box-->
 		<link rel="stylesheet" href="{{asset('frontEnd/css/colorbox.css')}}" />
+
 		<!-- responsive tabs -->
 		<link type="text/css" rel="stylesheet" href="{{asset('frontEnd/css/responsive-tabs.css')}}" />
 		<!-- home slider-->
 		<link href="{{asset('frontEnd/css/pgwslider.css')}}" rel="stylesheet">
 		<link href="{{asset('frontEnd/style.css')}}" rel="stylesheet" media="screen">	
-		<link href="{{asset('frontEnd/responsive.css')}}" rel="stylesheet" media="screen">		
+		<link href="{{asset('frontEnd/responsive.css')}}" rel="stylesheet" media="screen">
+		
 	</head>
 
 	<body>

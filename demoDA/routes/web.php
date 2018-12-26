@@ -19,6 +19,12 @@ Route::get('/upload','HomeController@uploadIndex');
 Route::post('/upload',['as'=>'upload.store','uses'=>'HomeController@store']);
 
 Route::resources(['staff'=>'StaffController']);
+Route::resources(['customer'=>'CustomerController']);
+Route::resources(['warehouse'=>'WarehouseController']);
+Route::resources(['item'=>'ItemController']);
+Route::resources(['department'=>'DepartmentController']);
+Route::resources(['itemown'=>'ItemOwnController']);
+Route::resources(['post'=>'PostController']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
