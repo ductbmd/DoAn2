@@ -72,7 +72,7 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Deal<i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -103,6 +103,7 @@
                             <li><a href="{{ route('item.index') }}">Item</a></li>
                             <li><a href="{{ route('itemown.index') }}">Itemown</a></li>
                             <li><a href="{{ route('itemown.create') }}">ItemOwn create</a></li>
+                            <li><a href="{{ route('item.search') }}">Search Product</a></li>
                         </ul>
                     </li> 
                     <li class="dropdown active">
@@ -120,6 +121,23 @@
                             <li class="active"><a href="404.html">404</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                     <li><span class="search-trigger"><i class="fa fa-search"></i></span></li>
                 </ul>
             </div>

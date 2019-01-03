@@ -23,7 +23,7 @@ I think it's ok!!!
 				         </div>
 					      <div class="form-group">
 				            {!! Form::label('staff_id', 'Staff ID take photo:') !!} <br>
-				            {!! Form::text('staff_id','', ['class' => 'field-long', 'placeholder' => 'enter localtion']) !!}
+				            {!! Form::select('staff_id',$staff_id, ['class' => 'field-select']) !!}
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('description', 'Description:') !!} <br>

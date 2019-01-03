@@ -29,6 +29,7 @@ Route::resources(['post'=>'PostController']);
 Route::get('postDo/{id}',['as'=>'post.show', 'uses'=> 'PostController@show']);
 Route::get('postDo/{id}/accept',['as'=>'post.accept', 'uses'=> 'PostController@accept']);
 Route::post('postDo/accepted',['as'=>'post.accepted','uses'=>'PostController@accepted']);
+Route::get('statistic/post',['as'=>'post.statistic','uses'=>'PostController@statistic']);
 
 Route::get('deal',['as'=>'deal.index', 'uses'=> 'DealController@index']);
 Route::get('deal/import',['as'=>'deal.import', 'uses'=> 'DealController@import']);
