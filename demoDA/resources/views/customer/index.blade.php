@@ -17,6 +17,7 @@ I think it's ok
 						<table class="zui-table">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Họ tên</th>
                                     <th>Ngày sinh</th>
                                     <th>Giới tính</th>
@@ -29,6 +30,7 @@ I think it's ok
                             <tbody>
                                 @foreach($datas as $data)
                                 <tr>
+                                    <td>{{$data->id}}</td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->birth}}</td>
                                     <td>{{App\Customer::$customer_sex[$data->sex]}}</td>

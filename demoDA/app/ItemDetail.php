@@ -20,4 +20,8 @@ class ItemDetail extends Model
     {
     	return $this->hasOne(Item::class,'id','item_id');
     }
+    public function itemown()
+    {
+        return $this->hasOne(ItemOwned::class,'item_id','id');
+    }
 }

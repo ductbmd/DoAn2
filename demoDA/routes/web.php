@@ -22,9 +22,22 @@ Route::resources(['staff'=>'StaffController']);
 Route::resources(['customer'=>'CustomerController']);
 Route::resources(['warehouse'=>'WarehouseController']);
 Route::resources(['item'=>'ItemController']);
+Route::get('itemsearch',['as'=>'item.search', 'uses'=> 'ItemController@search']);
 Route::resources(['department'=>'DepartmentController']);
 Route::resources(['itemown'=>'ItemOwnController']);
 Route::resources(['post'=>'PostController']);
+Route::get('postDo/{id}',['as'=>'post.show', 'uses'=> 'PostController@show']);
+Route::get('postDo/{id}/accept',['as'=>'post.accept', 'uses'=> 'PostController@accept']);
+Route::post('postDo/accepted',['as'=>'post.accepted','uses'=>'PostController@accepted']);
+
+Route::get('deal',['as'=>'deal.index', 'uses'=> 'DealController@index']);
+Route::get('deal/import',['as'=>'deal.import', 'uses'=> 'DealController@import']);
+Route::post('deal/import',['as'=>'deal.import.store', 'uses'=> 'DealController@importStore']);
+Route::get('deal/import/{id}',['as'=>'deal.import.show', 'uses'=> 'DealController@importShow']);
+Route::put('deal/import/{id}',['as'=>'deal.import.update', 'uses'=> 'DealController@importUpdate']);
+Route::delete('deal/import/{id}',['as'=>'deal.import.delete', 'uses'=> 'DealController@importDelete']);
+Route::post('dealDetail/import',['as'=>'dealdetail.import.store', 'uses'=> 'DealController@detailStore']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

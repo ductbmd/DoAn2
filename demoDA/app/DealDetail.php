@@ -21,4 +21,8 @@ class DealDetail extends Model
     {
     	return $this->hasOne(Deal::class,'id','deal_id');
     }
+    public function item()
+    {
+        return $this->hasOne(ItemDetail::class,'id','item_id');
+    }
 }

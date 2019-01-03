@@ -21,7 +21,12 @@ class ItemController extends Controller
     public function index()
     {
         /*$this->model->createDetail();*/
-        return view('item.index')->with('datas',$this->model->with('file.file')->paginate(5));
+        return view('item.index')->with('datas',$this->model->with('file.file')->paginate(8));
+    }
+    public function search(Request $request)
+    {
+        /*dd($request);*/
+        return view('item.search')->with('datas',$this->model->findDetail($request->search));
     }
     public function create()
     {
@@ -34,8 +39,8 @@ class ItemController extends Controller
         DB::beginTransaction();
         try {
             $item_id=$this->model->create($input_item)->id;
-
             //Tao item
+            $this->model->createDetail($item_id);
             if ( $request->file('file')[0] ) {
                 $file_id=UploadFileService::uploadImage($request->file('file')[0]);
                 //Tao file
@@ -44,6 +49,7 @@ class ItemController extends Controller
                 $input_item_file['description']=Item::$item_type[$request->type];
 
                 $test=ItemFile::create($input_item_file);
+
 
                 //Tao Lien ket file va item
             }

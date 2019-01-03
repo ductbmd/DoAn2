@@ -25,10 +25,11 @@ class PostDo extends Model
     }
     public function item()
     {
-        return $this->hasOne(Item::class,'id','item_id');
+        return $this->hasOne(ItemDetail::class,'id','item_id');
     }
     public function file()
     {
         return $this->hasOne(File::class,'id','file_id');
     }
+    
 }

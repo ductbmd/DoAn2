@@ -3,19 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Deal extends Model
 {
 	//Hoa don
      protected $table = 'deal';
-
+     use SoftDeletes;
 	/**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected $dates = ['deleted_at'];
     protected $fillable = [
-        'staff_id','customer_id','deposit','discout','description','created_at'
+        'staff_id','customer_id','deposit','discount','description','created_at'
     ];
     
     public function staff()

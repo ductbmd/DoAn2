@@ -90,7 +90,7 @@ abstract class Repository implements RepositoryInterface {
      * @return mixed
      */
     public function find($id, $columns = array('*')) {
-        return $this->model->with('author')->with('last_updated_by')->find($id, $columns);
+        return $this->model->find($id, $columns);
     }
     /**
      * @param $id

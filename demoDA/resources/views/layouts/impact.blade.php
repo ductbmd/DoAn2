@@ -74,10 +74,17 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Item<i class="icon-angle-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Deal<i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('item.create') }}">Create</a></li>
-                            <li><a href="{{ route('item.index') }}">Index</a></li>
+                            <li><a href="{{ route('deal.index') }}">Index</a></li>
+                            <li><a href="{{ route('deal.import') }}">Create</a></li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Post<i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('post.index') }}">Post</a></li>
+                            <li><a href="{{ route('post.index') }}">Statistics</a></li>
                         </ul>
                     </li> 
                     <li class="dropdown active">
@@ -86,7 +93,7 @@
                             <li><a href="{{ route('warehouse.create') }}">Create warehouse</a></li>
                             <li><a href="{{ route('warehouse.index') }}">Ware house</a></li>
                             <li><a href="{{ route('department.create') }}">Create Department</a></li>
-                            <li><a href="{{ route('warehouse.index') }}">Department</a></li>
+                            <li><a href="{{ route('department.index') }}">Department</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active">
@@ -144,8 +151,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 about-us-widget">
-                        <h4>Global Coverage</h4>
-                        <p>Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin.</p>
+                        <h4>Slogan</h4>
+                        <p>Slogan, slogan slogan slogan slogan  slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan</p>
                     </div><!--/.col-md-3-->
 
                     <div class="col-md-3 col-sm-6">
@@ -161,15 +168,15 @@
                     </div><!--/.col-md-3-->
 
                     <div class="col-md-3 col-sm-6">
-                        <h4>Latest Articles</h4>
+                        <h4>They call about me</h4>
                         <div>
                             <div class="media">
                                 <div class="pull-left">
                                     <img class="widget-img" src="http://placehold.it/800x600" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <span class="media-heading"><a href="#">Blog Post A</a></span>
-                                    <small class="muted">Posted 14 April 2014</small>
+                                    <span class="media-heading"><a href="#">Newspaper 1</a></span>
+                                    <small class="muted">Posted 14 December 2018</small>
                                 </div>
                             </div>
                             <div class="media">
@@ -177,20 +184,19 @@
                                     <img class="widget-img" src="http://placehold.it/800x600" alt="">
                                 </div>
                                 <div class="media-body">
-                                    <span class="media-heading"><a href="#">Blog Post B</a></span>
-                                    <small class="muted">Posted 14 April 2014</small>
+                                    <span class="media-heading"><a href="#">Newspaper 2</a></span>
+                                    <small class="muted">Posted 25 December 2018</small>
                                 </div>
                             </div>
                         </div>  
                     </div><!--/.col-md-3-->
 
                     <div class="col-md-3 col-sm-6">
-                        <h4>Come See Us</h4>
+                        <h4>Come See Me</h4>
                         <address>
-                            <strong>Ace Towers</strong><br>
-                            New York Ave,<br>
-                            New York, 215648<br>
-                            <abbr title="Phone"><i class="fa fa-phone"></i></abbr> 546 840654 05
+                            <strong>VietNam</strong><br>
+                            Ha Noi<br>
+                            <abbr title="Phone"><i class="fa fa-phone"></i></abbr> 0333798800
                         </address>
                     </div> <!--/.col-md-3-->
                 </div>
