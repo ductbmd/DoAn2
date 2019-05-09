@@ -37,5 +37,9 @@ class ItemRepository extends Repository {
         }
        return $this->model->where('type',3)->with('file.file')->paginate(5); 
     }
+    public function searchAll($value)
+    {
+        return $this->model->where('name', 'like', "%".$value."%")->orWhere('id','=',$value)->with('file.file')->paginate(8);
+    }
 
 }

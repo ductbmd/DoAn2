@@ -15,6 +15,20 @@ I think it's ok
                 <div class="gap"></div>
                 <div class="row">
                     <div class="col-md-12 fade-up">
+                        <div class="row">
+                            <div class="search">
+                                {!! Form::open(['route' => ['staff.search'], 'method'=> 'GET']) !!}
+                                <div class="input-group">
+                                  <input name="search" type="text" class="form-control" placeholder="Search for..." value="{{old('search')}}">
+                                  <span class="input-group-btn">
+                                     <button class="btn btn-primary btn-outlined" type="submit"><i class="fa fa-search"></i></button>
+                                  </span>
+                                </div><!-- /search -->
+
+                        {!! Form::close() !!}
+                            </div>
+                        </div>
+                        <div class="gap"></div>
                         <div id="meet-the-team" class="row">
                             @foreach($datas as $data)
                     <div class="col-md-3 col-xs-6">
@@ -35,13 +49,11 @@ I think it's ok
                         </div>
                     </div>
                             @endforeach
-                            @include('layouts.pagination', ['result'=>$datas])
+
                      
                 <!--/#meet-the-team-->
-						
-                         
-                            
 					</div>
+                    @include('layouts.pagination', ['result'=>$datas])
                 </div>
              </div>      
         </section>

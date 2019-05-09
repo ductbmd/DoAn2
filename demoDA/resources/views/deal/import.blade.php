@@ -19,11 +19,13 @@ I think it's ok!!!
 						 {!!Form::hidden('type',1)!!}
 				          <div class="form-group">
 				            {!! Form::label('staff_id', 'Staff ID :') !!} <br>
-				            {!! Form::text('staff_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!}
+				            {!! Form::select('staff_id',$staff_ids,['class' => 'field-select']) !!}
+				           <!--  {!! Form::text('staff_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!} -->
 				          </div><br>
 				          <div class="form-inline">
-				            {!! Form::label('customer_id', 'Customer ID') !!}
-				            {!! Form::text('customer_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!}
+				            {!! Form::label('customer_id', 'Customer ID') !!}<br>
+				            {!! Form::select('customer_id',$customer_ids,['class' => 'field-select']) !!}
+				            <!-- {!! Form::text('customer_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!} -->
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('discount', 'Discount:') !!} 

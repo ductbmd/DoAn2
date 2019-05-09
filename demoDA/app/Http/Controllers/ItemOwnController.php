@@ -8,6 +8,7 @@ use App\Department;
 use App\ItemOwned;
 use App\Repositories\ItemOwnRepository;
 use App\ItemDetail;
+use App\Staff;
 class ItemOwnController extends Controller
 {
     private $model;
@@ -26,6 +27,11 @@ class ItemOwnController extends Controller
     }
     public function create()
     {
+        $staff=Staff::select('id')->get();
+        $staff_id=array();
+        foreach ($staff as $value) {
+            $staff_id[$value->id]=$value->id;
+        }
     	$items=Item::select('id')->where('type',1)->get();
     	$itemIds = array();
     	foreach ($items as $item ) {
@@ -36,7 +42,7 @@ class ItemOwnController extends Controller
     	foreach ($departments as $department ) {
     		$department_id[$department->id]=$department->id;
     	}
-    	return view('itemown.create')->with('itemIds',$itemIds)->with('department_ids',$department_id);
+    	return view('itemown.create')->with('itemIds',$itemIds)->with('department_ids',$department_id)->with('staff_ids',$staff_id);
     }
     public function store(Request $request)
     {

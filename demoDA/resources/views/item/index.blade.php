@@ -15,14 +15,13 @@ I think it's ok!!!
                 <div class="row">
                     <aside class="col-sm-4 col-sm-push-8">
                         <div class="widget search">
-                            <form role="form">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" autocomplete="off" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary btn-outlined" type="button"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                            </form>
+                            <div class="widget search">
+                            {!! Form::open(['route' => ['item.search.All'], 'method'=> 'GET','class'=>'form-inline']) !!}
+                                {!! Form::text('search','' ,['class' => 'form-control', 'placeholder' => 'search some things']) !!}
+                                <button class="btn btn-primary btn-outlined" type="submit"><i class="fa fa-search"></i></button>
+                            {!! Form::close() !!}
+                            
+                        </div><!--/.search--> 
                         </div><!--/.search--> 
 
                         <div class="widget categories">
@@ -51,15 +50,15 @@ I think it's ok!!!
                         <div class="widget tags">
                             <h3 class="widget-title">Post Tags</h3>
                             <ul class="tag-cloud">
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Fashion</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Video</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">WordPress</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Plugins</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Downloads</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Freebies</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Envato</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Tutorial</a></li>
-                                <li><a class="btn btn-xs btn-primary btn-outlined" href="#">Update</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
+                                <li><a class="btn btn-xs btn-primary btn-outlined" href="http://localhost:8000/itemsearchAll?search=iphone">Iphone</a></li>
                             </ul>
                         </div><!--/.tags-->
 
@@ -75,6 +74,7 @@ I think it's ok!!!
                                     </div>  
                                 </div>  
                                 <div class="blog-content">
+                                    <h3><b>ID :</b>{{$data->id}}</h3><br>
                                    <h3><b>Tên :</b>{{$data->name}}</h3><br>
                                    <h3><b>Đơn vị:</b>{{App\Item::$item_unit[$data->unit]}}</h3><br>
                                    <h3><b>Số lượng:</b>{{$data->quantity}}</h3><br>

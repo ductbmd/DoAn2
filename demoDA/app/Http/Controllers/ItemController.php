@@ -28,6 +28,10 @@ class ItemController extends Controller
         /*dd($request);*/
         return view('item.search')->with('datas',$this->model->findDetail($request->search));
     }
+    public function searchAll(Request $request)
+    {
+        return view('item.index')->with('datas',$this->model->searchAll($request->search));
+    }
     public function create()
     {
     	return view('item.create');

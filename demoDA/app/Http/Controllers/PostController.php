@@ -34,11 +34,12 @@ class PostController extends Controller
         foreach ($staff_ids as $key=>$value) {
             $staff_id[$value->id]=$value->id;
         }
-        $item_id=array();
+        $item_id=array('1258'=>'None');
         $item_ids=ItemOwned::select('item_id')->get();
         foreach ($item_ids as $key=>$value) {
             $item_id[$value->item_id]=$value->item_id;
         }
+        $item_id[1258]='None';
     	return view('post.create')->with('staff_id',$staff_id)->with('item_id',$item_id);
     }
     public function store(Request $request)

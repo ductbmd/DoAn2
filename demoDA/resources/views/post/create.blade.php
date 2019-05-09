@@ -22,7 +22,7 @@ I think it's ok!!!
 				         </div>
 				          <div class="form-group">
 				            {!! Form::label('item_id', 'Item ID:') !!} <br>
-				            {!! Form::select('item_id',$item_id, ['class' => 'field-select']) !!}
+				            {!! Form::select('item_id',$item_id, ['class' => 'field-select','placeholder' => 'All']) !!}
 				          </div><br>
 				          
 				          <div class="form-group">

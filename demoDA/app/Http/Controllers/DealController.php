@@ -7,7 +7,8 @@ use App\Repositories\DealRepository;
 use App\Repositories\DealDetailRepository;
 use App\Item;
 use App\ItemDetail;
-
+use App\Staff;
+use App\Customer;
 class DealController extends Controller
 {
     private $model;
@@ -26,7 +27,17 @@ class DealController extends Controller
     }
     public function import()
     {
-    	return view('deal.import');
+        $staff=Staff::select('id')->get();
+        $staff_id=array();
+        foreach ($staff as $value) {
+            $staff_id[$value->id]=$value->id;
+        }
+        $customer=Customer::select('id')->get();
+        $customer_id=array();
+        foreach ($customer as $value) {
+            $customer_id[$value->id]=$value->id;
+        }
+    	return view('deal.import')->with('staff_ids',$staff_id)->with('customer_ids',$customer_id);
     }
     public function importStore(Request $request)
     {

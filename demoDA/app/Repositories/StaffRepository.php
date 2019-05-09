@@ -21,5 +21,9 @@ class StaffRepository extends Repository {
     public function paginate( $perPage=15,$columns = array('*')) {
         return $this->model->orderBy('position', 'desc')->paginate($perPage, $columns);
     }
+    public function search($value)
+    {
+        return $this->model->where('name', 'like', "%".$value."%")->with('department')->with('file')->orderBy('position', 'desc')->paginate(8);
+    }
 
 }

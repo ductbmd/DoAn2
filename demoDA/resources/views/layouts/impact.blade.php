@@ -68,7 +68,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html"><h1><span class="pe-7s-gleam bounce-in"></span> IMPACT</h1></a>
+                <a class="navbar-brand" href="/home"><h1><span class="pe-7s-gleam bounce-in"></span> TBMD</h1></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -84,7 +84,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Post<i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('post.index') }}">Post</a></li>
-                            <li><a href="{{ route('post.index') }}">Statistics</a></li>
+                            <li><a href="{{ route('post.statistic') }}">Statistics</a></li>
                         </ul>
                     </li> 
                     <li class="dropdown active">
@@ -94,6 +94,7 @@
                             <li><a href="{{ route('warehouse.index') }}">Ware house</a></li>
                             <li><a href="{{ route('department.create') }}">Create Department</a></li>
                             <li><a href="{{ route('department.index') }}">Department</a></li>
+                            <li><a href="{{ route('location.index') }}">Location</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active">
@@ -127,6 +128,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('staff.notification') }}">Notification</a><br>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -225,7 +227,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        &copy; 2014 <a target="_blank" href="http://www.distinctivethemes.com" title="Premium Themes and Templates">Distinctive Themes</a>. All Rights Reserved.
+                        &copy; 2018 <a target="_blank" href="https://www.facebook.com/tobaminhduc1" title="Author">Design by ToBaMinhDuc</a>. All Rights Reserved.
                     </div>
                     <div class="col-sm-6">
                         <ul class="pull-right">

@@ -18,9 +18,11 @@ I think it's ok!!!
                 	@foreach($itemOwn as $item)
                     <div class="col-md-6">
                         <div class="testimonial-list-item">
+                            @if(isset($item->item->itemgoc->file->file->url))
                         <img class="pull-left img-responsive quote-author-list" src="{{asset($item->item->itemgoc->file->file->url) }}">
+                            @endif
                             <blockquote>
-                                <p><b>Vị trí: </b>{{$item->position}} &nbsp;&nbsp;<b>Phòng: </b>{{$item->department['name']}}<b> Item: </b>{{$item->item->itemgoc->name}} </p>
+                                <p><b>ID: </b>{{$item->item_id}}<b>Vị trí: </b>{{$item->position}} &nbsp;&nbsp;<b>Phòng: </b>{{$item->department['name']}}<b> Item: </b>{{$item->item->itemgoc->name}} </p>
                                 <small>Staff: <cite title="Source Title">{{$item->staff['name']}}</cite></small>
                             </blockquote>
                         </div>

@@ -5,6 +5,9 @@ use App\Staff;
 use Illuminate\Http\Request;
 use App\Repositories\StaffRepository;
 use App\Services\UploadFileService;
+use App\Department;
+use App\Location;
+use App\PostDo;
 class StaffController extends Controller
 {
 	private $model;
@@ -22,7 +25,12 @@ class StaffController extends Controller
     }
     public function create()
     {
-    	return view('staff.create');
+        $department=Department::select('id')->get();
+        $department_id=array();
+        foreach ($department as $value) {
+            $department_id[$value->id]=$value->id;
+        }
+    	return view('staff.create')->with('department_ids',$department_id);
     }
     public function store(Request $request)
     {
@@ -59,5 +67,19 @@ class StaffController extends Controller
         $staff=$this->model->findBy('id',$id);
         $staff->delete();
         return redirect()->route('staff.index');
+    }
+    public function search(Request $request)
+    {
+        return view('staff.index')->with('datas',$this->model->search($request->search));
+    }
+    public function Notification()
+    {
+        $listLocation=array();
+        $locations=Location::where('staff_id',\Auth::guard()->user()->id )->get(['name']);
+        foreach ($locations as $location) {
+            array_push($listLocation, $location->name);
+        }
+        $postDo=PostDo::whereIn('localtion',$listLocation)->paginate(8);
+        return view('Notification')->with('postDo',$postDo);
     }
 }

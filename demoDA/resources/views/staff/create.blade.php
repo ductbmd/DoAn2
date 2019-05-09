@@ -71,7 +71,8 @@ I think it's ok
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('id_department', 'Mã phòng:') !!} <br>
-				            {!! Form::text('id_department','', ['class' => 'form-group', 'placeholder' => 'enter id department']) !!}
+				            {!! Form::select('id_department',$department_ids,['class' => 'field-select']) !!}
+				            <!-- {!! Form::text('id_department','', ['class' => 'form-group', 'placeholder' => 'enter id department']) !!} -->
 				          </div><br>
 				          <div class="form-inline">
 				            {!! Form::label('position', 'Vị trí:') !!}
