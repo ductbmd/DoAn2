@@ -20,15 +20,14 @@ class StaffController extends Controller
     }
     public function index()
     {
-
         return view('staff.index')->with('datas',$this->model->with('department')->with('file')->orderBy('position', 'desc')->paginate(8));
     }
     public function create()
     {
-        $department=Department::select('id')->get();
+        $department=Department::select('id','name')->get();
         $department_id=array();
         foreach ($department as $value) {
-            $department_id[$value->id]=$value->id;
+            $department_id[$value->id]=$value->name;
         }
     	return view('staff.create')->with('department_ids',$department_id);
     }
@@ -47,8 +46,12 @@ class StaffController extends Controller
     }
     public function edit($id)
     {
-
-       return view('staff.edit')->with('staff',$this->model->findBy('id',$id));
+        $department=Department::select('id','name')->get();
+        $department_id=array();
+        foreach ($department as $value) {
+            $department_id[$value->id]=$value->name;
+        }
+       return view('staff.edit')->with('staff',$this->model->findBy('id',$id))->with('department_ids',$department_id);
     }
     public function update($id,Request $request)
     {

@@ -18,16 +18,16 @@ I think it's ok!!!
 						{!! Form::open(['route' => ['itemown.store'], 'method'=> 'POST']) !!}
 						 
 				          <div class="form-group">
-				            {!! Form::label('staff_id','Mã nhân viên') !!} <br>
+				            {!! Form::label('staff_id','Nhân viên') !!} <br>
 				            {!! Form::select('staff_id',$staff_ids,['class' => 'field-select']) !!}
 				            <!-- {!! Form::text('staff_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!} -->
 				          </div><br>
 				          <div class="form-inline">
-				            {!! Form::label('item_id', 'Mã dụng cụ :') !!}
+				            {!! Form::label('item_id', 'Dụng cụ :') !!}
 				            {!! Form::select('item_id',$itemIds,['class' => 'field-select']) !!}
 				          </div><br>
 				          <div class="form-inline">
-				            {!! Form::label('department_id', 'Mã phòng :') !!}
+				            {!! Form::label('department_id', 'Phòng :') !!}
 				            {!! Form::select('department_id',$department_ids,['class' => 'field-select']) !!}
 				          </div><br>
 				          <div class="form-group">

@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('post.index');
 });
-Route::get('/home','HomeController@index');
+Route::get('/home','PostController@index');
 Route::get('/upload','HomeController@uploadIndex');
 Route::post('/upload',['as'=>'upload.store','uses'=>'HomeController@store']);
 

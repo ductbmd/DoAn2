@@ -21,7 +21,9 @@ class ItemController extends Controller
     public function index()
     {
         /*$this->model->createDetail();*/
+        // dd($this->model->with('file.file')->get());
         return view('item.index')->with('datas',$this->model->with('file.file')->paginate(8));
+
     }
     public function search(Request $request)
     {
@@ -53,8 +55,6 @@ class ItemController extends Controller
                 $input_item_file['description']=Item::$item_type[$request->type];
 
                 $test=ItemFile::create($input_item_file);
-
-
                 //Tao Lien ket file va item
             }
         } catch (Exception $e) {
@@ -67,6 +67,7 @@ class ItemController extends Controller
     public function edit($id)
     {
         /*dd($this->model->with('file.file')->find($id));*/
+
        return view('item.edit')->with('item',$this->model->with('file.file')->find($id));
     }
     public function update($id,Request $request)
@@ -97,14 +98,14 @@ class ItemController extends Controller
     {
          DB::beginTransaction();
          try {
-             $staff=$this->model->findBy('id',$id);
-             $staff->delete();
+             $item=$this->model->findBy('id',$id);
+             $item->delete();
              ItemFile::where('item_id',$id)->delete();
          } catch (Exception $e) {
               DB::rollBack();
             echo $e;
          }
         DB::commit();
-        redirect()->route('item.index');
+        return redirect()->route('item.index');
     }
 }

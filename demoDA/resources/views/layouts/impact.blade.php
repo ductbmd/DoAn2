@@ -68,11 +68,25 @@
                     <span class="sr-only">Toggle navigation</span>
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/home"><h1><span class="pe-7s-gleam bounce-in"></span> TBMD</h1></a>
+                <a class="navbar-brand" href="/home"><h1><span class="pe-7s-gleam bounce-in"></span> ACHTD</h1></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/home">Home</a></li>
+                     <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Post<i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('post.index') }}">Post</a></li>
+                            <li><a href="{{ route('post.statistic') }}">Statistics</a></li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Location<i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('location.create') }}">Create</a></li>
+                            <li><a href="{{ route('location.index') }}">index</a></li>
+                            
+                        </ul>
+                    </li>
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Deal<i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -80,13 +94,7 @@
                             <li><a href="{{ route('deal.import') }}">Create</a></li>
                         </ul>
                     </li> 
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Post<i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ route('post.index') }}">Post</a></li>
-                            <li><a href="{{ route('post.statistic') }}">Statistics</a></li>
-                        </ul>
-                    </li> 
+                   
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">WareHouse & Department<i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -119,26 +127,26 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('staff.create') }}">Create</a></li>
                             <li><a href="{{ route('staff.index') }}">Index</a></li>
-                            <li class="active"><a href="404.html">404</a></li>
+                            
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <li class="dropdown active">
+                                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('staff.notification') }}">Notification</a><br>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                    <li><a  href="{{ route('staff.notification') }}">Notification</a></li>
+                                    <li><a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
+                                    </a></li>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                </ul>
                             </li>
                     <li><span class="search-trigger"><i class="fa fa-search"></i></span></li>
                 </ul>
@@ -171,8 +179,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 about-us-widget">
-                        <h4>Slogan</h4>
-                        <p>Slogan, slogan slogan slogan slogan  slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan slogan</p>
+                        <h4>Thành viên</h4>
+                        <p>Bài tập lớn, Thiết kê và lập trình web <span>Tô Bá Minh Đức 20166010</span></p>
+                        <p>Nguyễn Quang Chung 20165813</p>
+                        <p>Nguyễn Quang Hà 20166030</p>
+                        <p>Phạm Quang Anh 20165755</p>
+                        <p>Nguyễn Duy Tùng 20166972</p>
                     </div><!--/.col-md-3-->
 
                     <div class="col-md-3 col-sm-6">

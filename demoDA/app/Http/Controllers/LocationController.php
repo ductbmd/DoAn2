@@ -24,16 +24,16 @@ class LocationController extends Controller
     }
     public function create()
     {
-        $staff=Staff::select('id')->get();
+        $staff=Staff::select('id','name')->get();
         $staff_id=array();
         foreach ($staff as $value) {
-            $staff_id[$value->id]=$value->id;
+            $staff_id[$value->id]=$value->name;
         }
     	
-    	$departments=Department::select('id')->get();
+    	$departments=Department::select('id','name')->get();
     	$department_id = array();
     	foreach ($departments as $department ) {
-    		$department_id[$department->id]=$department->id;
+    		$department_id[$department->id]=$department->name;
     	}
     	return view('location.create')->with('department_ids',$department_id)->with('staff_ids',$staff_id);
     }

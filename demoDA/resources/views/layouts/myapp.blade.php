@@ -96,7 +96,7 @@
 					</div>
 					<div class="fix single_footer_top floatleft">
 						<h2>ThongTin</h2>
-						DoAn2
+						BaiTapLon Web
 					</div>
 					<div class="fix single_footer_top floatleft">
 						<h2>To duc</h2>

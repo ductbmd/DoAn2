@@ -18,17 +18,17 @@ I think it's ok!!!
 						{!! Form::open(['route' => ['deal.import.store'], 'method'=> 'POST','files' => true]) !!}
 						 {!!Form::hidden('type',1)!!}
 				          <div class="form-group">
-				            {!! Form::label('staff_id', 'Staff ID :') !!} <br>
+				            {!! Form::label('staff_id', 'Nhân viên :') !!} <br>
 				            {!! Form::select('staff_id',$staff_ids,['class' => 'field-select']) !!}
 				           <!--  {!! Form::text('staff_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!} -->
 				          </div><br>
 				          <div class="form-inline">
-				            {!! Form::label('customer_id', 'Customer ID') !!}<br>
+				            {!! Form::label('customer_id', 'Khách hàng') !!}<br>
 				            {!! Form::select('customer_id',$customer_ids,['class' => 'field-select']) !!}
 				            <!-- {!! Form::text('customer_id','', ['class' => 'field-long', 'placeholder' => 'enter staff id']) !!} -->
 				          </div><br>
 				          <div class="form-group">
-				            {!! Form::label('discount', 'Discount:') !!} 
+				            {!! Form::label('discount', 'Khuyến mãi:') !!} 
 				            {!! Form::number('discount','0', ['class' => 'field-long', 'placeholder' => 'enter discount','min'=>0,'max'=>100,'step'=>'1']) !!} 
 				          </div><br>
 				          <div class="form-group">

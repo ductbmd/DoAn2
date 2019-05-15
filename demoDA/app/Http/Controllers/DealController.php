@@ -27,15 +27,15 @@ class DealController extends Controller
     }
     public function import()
     {
-        $staff=Staff::select('id')->get();
+        $staff=Staff::select('id','name')->get();
         $staff_id=array();
         foreach ($staff as $value) {
-            $staff_id[$value->id]=$value->id;
+            $staff_id[$value->id]=$value->name;
         }
-        $customer=Customer::select('id')->get();
+        $customer=Customer::select('id','name')->get();
         $customer_id=array();
         foreach ($customer as $value) {
-            $customer_id[$value->id]=$value->id;
+            $customer_id[$value->id]=$value->name;
         }
     	return view('deal.import')->with('staff_ids',$staff_id)->with('customer_ids',$customer_id);
     }

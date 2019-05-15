@@ -19,7 +19,7 @@ I think it's ok!!!
 						
 				          <div class="form-group">
 				            {!! Form::label('name', 'Họ tên:') !!} <br>
-				            {!! Form::text('name','', ['class' => 'field-long', 'placeholder' => 'enter your name']) !!}
+				            {!! Form::text('name','', ['class' => 'field-long', 'placeholder' => 'enter your name','required']) !!}
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('birth', 'Ngay sinh') !!} <br>
@@ -31,15 +31,15 @@ I think it's ok!!!
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('CMND', 'CMND:') !!} <br>
-				            {!! Form::text('CMND','', ['class' => 'field-long', 'placeholder' => 'enter your CMND']) !!}
+				            {!! Form::text('CMND','', ['class' => 'field-long', 'placeholder' => 'enter your CMND', 'required']) !!}
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('SDT', 'Số điện thoại:') !!} <br>
-				            {!! Form::text('SDT','', ['class' => 'field-long', 'placeholder' => 'enter your number phone']) !!}
+				            {!! Form::text('SDT','', ['class' => 'field-long', 'placeholder' => 'enter your number phone','required']) !!}
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('Email', 'Email:') !!} <br>
-				            {!! Form::email('Email','', ['class' => 'field-long', 'placeholder' => 'enter your email']) !!}
+				            {!! Form::email('Email','', ['class' => 'field-long', 'placeholder' => 'enter your email','required']) !!}
 				          </div><br>
 				          
 

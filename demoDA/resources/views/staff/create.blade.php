@@ -51,7 +51,7 @@ I think it's ok
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('birth', 'Ngày sinh') !!} <br>
-				             {!! Form::date('birth', ' ', ['class' => 'form-group', 'placeholder' => 'your birth']) !!}
+				            {!! Form::date('birth', ' ', ['class' => 'form-group', 'placeholder' => 'your birth']) !!}
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('sex', ' Giới tính:') !!} 
@@ -70,7 +70,7 @@ I think it's ok
 				            {!! Form::email('Email','', ['class' => 'field-long', 'placeholder' => 'enter your email']) !!}
 				          </div><br>
 				          <div class="form-group">
-				            {!! Form::label('id_department', 'Mã phòng:') !!} <br>
+				            {!! Form::label('id_department', 'Phòng:') !!} <br>
 				            {!! Form::select('id_department',$department_ids,['class' => 'field-select']) !!}
 				            <!-- {!! Form::text('id_department','', ['class' => 'form-group', 'placeholder' => 'enter id department']) !!} -->
 				          </div><br>

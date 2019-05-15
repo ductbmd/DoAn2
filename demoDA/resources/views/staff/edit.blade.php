@@ -27,7 +27,7 @@ I think it's ok
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('birth', 'Ngày sinh') !!} <br>
-				             {!! Form::date('birth', $staff->birth, ['class' => 'field-long', 'placeholder' => 'your birth']) !!}
+				             {!! Form::date('birth', $staff->birth, ['class' => 'field-long']) !!}
 				          </div><br>
 				          <div class="form-group">
 				            {!! Form::label('sex', ' Giới tính:') !!} 
@@ -46,8 +46,9 @@ I think it's ok
 				            {!! Form::email('Email',$staff->Email, ['class' => 'field-long', 'placeholder' => 'enter your email']) !!}
 				          </div><br>
 				          <div class="form-group">
-				            {!! Form::label('id_department', 'Mã phòng:') !!} <br>
-				            {!! Form::text('id_department',$staff->id_department, ['class' => 'form-group', 'placeholder' => 'enter id department']) !!}
+				            {!! Form::label('id_department', 'Phòng:') !!} <br>
+				            {!! Form::select('id_department',$department_ids,['class' => 'field-select']) !!}
+				            <!-- {!! Form::text('id_department','', ['class' => 'form-group', 'placeholder' => 'enter id department']) !!} -->
 				          </div><br>
 				          <div class="form-inline">
 				            {!! Form::label('position', 'Vị trí:') !!}

@@ -29,10 +29,10 @@ class PostController extends Controller
     }
     public function create()
     {
-        $staff_ids=Staff::select('id')->get();
+        $staff_ids=Staff::select('id','name')->get();
         $staff_id=array();
         foreach ($staff_ids as $key=>$value) {
-            $staff_id[$value->id]=$value->id;
+            $staff_id[$value->id]=$value->name;
         }
         $item_id=array('1258'=>'None');
         $item_ids=ItemOwned::select('item_id')->get();

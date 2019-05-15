@@ -14,7 +14,9 @@ I think it's ok!!!
                 <div class="gap"></div>
                 <div class="row">
                     <div class="col-md-12 fade-up">
+                    	@if(!empty($item->file))
                     	<img class="img-responsive img-blog" src="{{asset($item->file->file->url)}}" alt="item" />
+                    	@endif
                     	<ul class="form-style-1">
 						{!! Form::open(['route' => ['item.update','id'=>$item->id], 'method'=> 'PUT','files' => true]) !!}
 						 <div class="form-group">
